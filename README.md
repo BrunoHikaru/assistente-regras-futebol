@@ -52,17 +52,6 @@ por etapa (classificação, embedding da consulta, decisão e eventual nova
 tentativa). O custo usa a tabela `PRICES_PER_MILLION`; para um modelo que não
 esteja lá, o custo aparece como `null` / "n/d".
 
-## Código reaproveitado das aulas
-
-Adaptado dos exercícios do curso de IA Generativa.
-
-| Aula | Usado em |
-|---|---|
-| 2 - Structured outputs e classificador de intenção | `classify.py`, `schemas.py` |
-| 3/4 - Embeddings, chunking, RAG com citações validadas | `retrieval.py`, `rag.py` |
-| 5 - Avaliação com casos de teste | `tests/run_eval.py` |
-| 7 - FastAPI + cliente HTTP | `api.py`, `ui.py` |
-
 ## Como executar
 
 Requisitos: Python 3.10+ e [uv](https://docs.astral.sh/uv/).

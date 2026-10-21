@@ -16,20 +16,6 @@ com base nas Leis do Jogo da IFAB.
 
 ## Fluxo
 
-```mermaid
-flowchart LR
-    Q[Lance] --> C["Passo 1 (LLM)<br/>classificar + reescrever consulta"]
-    C -->|fora_do_tema| F[Recusa]
-    C --> R[Recuperação<br/>embeddings]
-    R -->|nada relevante| S[Sem evidência]
-    R --> D["Passo 2 (LLM)<br/>decisão com citações"]
-    D -->|falta detalhe| P[Perguntas]
-    D -->|regras não cobrem| S
-    D --> V{Validar citações}
-    V -->|falhou| D
-    V --> OK[Decisão + regras citadas]
-```
-
 1. **Classificar** ([app/classify.py](app/classify.py)): categoria do lance
    (impedimento, mão na bola, falta, ...) e uma consulta reescrita com o
    vocabulário do regulamento, que melhora a recuperação.
